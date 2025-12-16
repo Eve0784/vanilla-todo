@@ -1,33 +1,49 @@
-*{
+* {
     box-sizing: border-box;
     /* border: rgb(160, 160, 242) 2px solid; */
 }
 
-html, body{
+html,
+body {
     margin: 0px;
     padding: 0px;
 }
 
-body{
+body {
     width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
 
-.page{
+.page {
     max-width: 800px;
     padding: 16px;
+    background-color: rgba(245, 245, 220, 0.57);
+    color: white;
+    margin-top: 50px;
+    border-radius: 25px;
 }
-.todo-card{
+
+.title-index{
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+.todo-card {
     margin-bottom: 4px;
     padding: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 4px;
+    color: black;
+    text-shadow: 1px 1px 2px lightskyblue;
 }
+
 /* .detail-btn{
     background-color: white;
     border: 1px solid black;
@@ -42,8 +58,8 @@ body{
     color: white;
 } */
 
-.detail-link{
-  background-color: white;
+.detail-link {
+    background-color: white;
     border: 1px solid black;
     border-radius: 50%;
     font-size: x-large;
@@ -55,7 +71,30 @@ body{
     text-align: center;
 }
 
-.detail-link:hover{
+.detail-link:hover {
     background-color: black;
     color: white;
-} 
+}
+
+.btns-container{
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #004a9e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.btn:hover {
+    background: #8dadd5;
+    border: #020024 1px solid;
+    color: black;
+}

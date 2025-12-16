@@ -9,15 +9,15 @@ function displayTodo(todo) {
     description.appendChild(document.createTextNode('Descrizione: ' + todo.description));
     dato.appendChild(description);
 
-    const creationDate = document.createElement('p');
+    const creationDate = document.createElement('span');
     creationDate.appendChild(document.createTextNode('Data di creazione: ' + todo.creationDate));
     dato.appendChild(creationDate);
 
-    const endDate = document.createElement('p');
+    const endDate = document.createElement('span');
     endDate.appendChild(document.createTextNode('Data di scadenza: ' + todo.endDate));
     dato.appendChild(endDate);
 
-    const colorContainer = document.createElement('p');
+    const colorContainer = document.createElement('span');
     colorContainer.appendChild(document.createTextNode('Colore: '));
 
     const colorBox = document.createElement('span');
@@ -30,9 +30,14 @@ function displayTodo(todo) {
     colorBox.style.verticalAlign = 'middle';
 
     colorContainer.appendChild(colorBox);
-    // colorContainer.appendChild(document.createTextNode(' ' + todo.color));
+    colorContainer.appendChild(document.createTextNode(' ' + todo.color));
 
     dato.appendChild(colorContainer);
+
+    const isDone = document.createElement('span');
+    isDone.appendChild(document.createTextNode('Finito: ' + (todo.done ? "sì" : "no")));
+    dato.appendChild(isDone);
+
 
 
 }
