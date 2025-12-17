@@ -9,6 +9,9 @@ function displayTodos(todos) {
 
         const titleSpan = document.createElement('span');
         titleSpan.appendChild(document.createTextNode(todo.title));
+        if (todo.done === true) {
+            titleSpan.style.textDecoration = 'line-through'
+        }
         card.appendChild(titleSpan);
 
         // const detailBtn = document.createElement('button');

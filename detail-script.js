@@ -2,8 +2,22 @@ function displayTodo(todo) {
     const titleHeader = document.getElementById('todo-title');
     titleHeader.innerHTML = todo.title;
 
+    const colorContainer = document.createElement('span');
+    // colorContainer.innerHTML = '<span style="font-weight: bold;">Colore: </span>';
+
+    const colorBox = document.createElement('span');
+    colorBox.style.display = 'inline-block';
+    colorBox.style.width = '20px';
+    colorBox.style.height = '20px';
+    colorBox.style.borderRadius = '10px';
+    colorBox.style.backgroundColor = todo.color;
+    colorBox.style.marginLeft = '5px';
+    colorBox.style.verticalAlign = 'middle';
+
+    colorContainer.appendChild(colorBox);
+    titleHeader.appendChild(colorContainer);
+
     const dato = document.getElementById('dati-todo');
-    // dato.innerHTML = '';
 
     const description = document.createElement('p');
     description.innerHTML = todo.description;
@@ -16,23 +30,6 @@ function displayTodo(todo) {
     const endDate = document.createElement('span');
     endDate.innerHTML = '<span style="font-weight: bold;">Data di scadenza: </span>' + formaDate(todo.endDate);
     dato.appendChild(endDate);
-
-    const colorContainer = document.createElement('span');
-    colorContainer.innerHTML = '<span style="font-weight: bold;">Colore: </span>';
-
-    const colorBox = document.createElement('span');
-    colorBox.style.display = 'inline-block';
-    colorBox.style.width = '20px';
-    colorBox.style.height = '20px';
-    colorBox.style.backgroundColor = todo.color;
-    colorBox.style.border = '1px solid #000';
-    colorBox.style.marginLeft = '5px';
-    colorBox.style.verticalAlign = 'middle';
-
-    colorContainer.appendChild(colorBox);
-    colorContainer.appendChild(document.createTextNode(' ' + todo.color));
-
-    dato.appendChild(colorContainer);
 
     const isDone = document.createElement('span');
     isDone.innerHTML = '<span style="font-weight: bold;"> Stato: </span>' + (todo.done ? "Completato" : "Da completare");
@@ -57,4 +54,4 @@ function formaDate(dateIso) {
 }
 const searchParams = new URLSearchParams(window.location.search);
 const id = searchParams.get('todoId')
-getTodo(id).then(result => displayTodo(result))
+getTodo(id).then(result => displayTodo(result));
