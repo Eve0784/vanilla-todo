@@ -19,19 +19,18 @@ function displayTodos(todos) {
         }
         card.appendChild(titleSpan);
 
-        // const detailBtn = document.createElement('button');
-        // detailBtn.appendChild(document.createTextNode('⤏'));
-        // detailBtn.classList.add('detail-btn');
-        // detailBtn.addEventListener('click', () => {
-        //     window.location.assign('./detail.html?todoId='+todo.id)
-        // })
-        // card.appendChild(detailBtn);
-
+        const remainingDays = document.createElement('span');
+        remainingDays.innerHTML = calculateDaysRemaining(todo.endDate) + ' giorni alla scadenza';
+        card.appendChild(remainingDays);
+        
+        const linkDiv = document.createElement('div');
+        linkDiv.classList.add('arrow-div')
         const detailLink = document.createElement('a');
         detailLink.appendChild(document.createTextNode('🡺'));
         detailLink.classList.add('detail-link');
         detailLink.href = './detail.html?todoId=' + todo.id;
-        card.appendChild(detailLink)
+        linkDiv.appendChild(detailLink);
+        card.appendChild(linkDiv)
 
 
         todosContainer.appendChild(card);
@@ -76,3 +75,9 @@ function orderByDate() {
 
 const orderByDateBtn = document.getElementById('order-date');
 orderByDateBtn.addEventListener('click', orderByDate);
+
+function calculateDaysRemaining(endDate) {
+    const today = new Date();
+    const millSec = 86400000;
+    return Math.ceil((new Date(endDate) - today) / millSec);
+}

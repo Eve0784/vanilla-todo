@@ -37,7 +37,7 @@ body {
     margin-bottom: 4px;
     padding: 4px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     gap: 4px;
     color: black;
@@ -45,7 +45,7 @@ body {
 }
 
 span {
-    margin-left: 10px;
+    margin-left: 30px;
     display: block;
     text-align: left;
     width: 100%;
@@ -66,18 +66,27 @@ span {
     color: white;
 } */
 
+.arrow-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30px;
+}
+
 .detail-link {
     background-color: white;
     border: 1px solid black;
     border-radius: 50%;
     font-size: large;
-    width: 35px;
+    width: 30px;
     height: 30px;
     text-decoration: none;
     color: black;
     line-height: 30px;
     text-align: center;
-     box-shadow:  1px 1px 2px rgb(29, 32, 34);
+    box-shadow:  1px 1px 2px rgb(29, 32, 34);
+    margin-right: 10px;
 }
 
 .detail-link:hover {
@@ -111,6 +120,7 @@ span {
 }
 
 .colored-dot {
+    margin-left: 10px;
     min-height: 25px;
     min-width: 25px;
     border-radius: 50%;
