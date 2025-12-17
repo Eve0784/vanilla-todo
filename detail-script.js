@@ -6,7 +6,7 @@ function displayTodo(todo) {
     // dato.innerHTML = '';
 
     const description = document.createElement('p');
-    description.appendChild(document.createTextNode('Descrizione: ' + todo.description));
+    description.appendChild(document.createTextNode(todo.description));
     dato.appendChild(description);
 
     const creationDate = document.createElement('span');
@@ -35,11 +35,8 @@ function displayTodo(todo) {
     dato.appendChild(colorContainer);
 
     const isDone = document.createElement('span');
-    isDone.appendChild(document.createTextNode('Finito: ' + (todo.done ? "sì" : "no")));
+    isDone.appendChild(document.createTextNode('Finito: ' + (todo.done ? "Sì" : "No")));
     dato.appendChild(isDone);
-
-
-
 }
 
 const searchParams = new URLSearchParams(window.location.search);
