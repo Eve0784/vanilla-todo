@@ -3,7 +3,6 @@ function displayTodo(todo) {
     titleHeader.innerHTML = todo.title;
 
     const colorContainer = document.createElement('span');
-    // colorContainer.innerHTML = '<span style="font-weight: bold;">Colore: </span>';
 
     const colorBox = document.createElement('span');
     colorBox.style.display = 'inline-block';
@@ -11,6 +10,7 @@ function displayTodo(todo) {
     colorBox.style.height = '20px';
     colorBox.style.borderRadius = '10px';
     colorBox.style.backgroundColor = todo.color;
+    colorBox.style.border = '1px solid #5f5f5fff';
     colorBox.style.marginLeft = '5px';
     colorBox.style.verticalAlign = 'middle';
 
