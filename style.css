@@ -28,7 +28,7 @@ body {
     border-radius: 25px;
 }
 
-.title-index{
+.title-index {
     text-align: center;
     text-shadow: 1px 1px 2px black;
 }
@@ -76,11 +76,11 @@ body {
     color: white;
 }
 
-.btns-container{
+.btns-container {
     display: flex;
     gap: 20px;
     justify-content: space-evenly;
-    
+
 }
 
 .btn {
@@ -93,6 +93,7 @@ body {
     cursor: pointer;
     margin-bottom: 15px;
 }
+
 .btn:hover {
     background: #8dadd5;
     border: #020024 1px solid;
