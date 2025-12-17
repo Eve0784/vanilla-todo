@@ -6,7 +6,7 @@ function displayTodo(todo) {
     // dato.innerHTML = '';
 
     const description = document.createElement('p');
-    description.appendChild(document.createTextNode(todo.description));
+    description.innerHTML = todo.description;
     dato.appendChild(description);
 
     const creationDate = document.createElement('span');
