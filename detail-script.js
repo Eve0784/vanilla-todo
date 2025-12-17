@@ -10,15 +10,15 @@ function displayTodo(todo) {
     dato.appendChild(description);
 
     const creationDate = document.createElement('span');
-    creationDate.appendChild(document.createTextNode('Data di creazione: ' + todo.creationDate));
+    creationDate.innerHTML = '<span style="font-weight: bold;"> Data di creazione: </span>' + todo.creationDate;
     dato.appendChild(creationDate);
 
     const endDate = document.createElement('span');
-    endDate.appendChild(document.createTextNode('Data di scadenza: ' + todo.endDate));
+    endDate.innerHTML = '<span style="font-weight: bold;">Data di scadenza: </span>' + todo.endDate;
     dato.appendChild(endDate);
 
     const colorContainer = document.createElement('span');
-    colorContainer.appendChild(document.createTextNode('Colore: '));
+    colorContainer.innerHTML = '<span style="font-weight: bold;">Colore: </span>';
 
     const colorBox = document.createElement('span');
     colorBox.style.display = 'inline-block';
@@ -35,7 +35,7 @@ function displayTodo(todo) {
     dato.appendChild(colorContainer);
 
     const isDone = document.createElement('span');
-    isDone.appendChild(document.createTextNode('Finito: ' + (todo.done ? "Sì" : "No")));
+    isDone.innerHTML = '<span style="font-weight: bold;"> Stato: </span>' + (todo.done ? "Completato" : "Da completare");
     dato.appendChild(isDone);
 }
 
