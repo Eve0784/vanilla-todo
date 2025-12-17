@@ -2,20 +2,9 @@ function displayTodo(todo) {
     const titleHeader = document.getElementById('todo-title');
     titleHeader.innerHTML = todo.title;
 
-    const colorContainer = document.createElement('span');
-
-    const colorBox = document.createElement('span');
-    colorBox.style.display = 'inline-block';
-    colorBox.style.width = '20px';
-    colorBox.style.height = '20px';
-    colorBox.style.borderRadius = '10px';
-    colorBox.style.backgroundColor = todo.color;
-    colorBox.style.border = '1px solid #5f5f5fff';
-    colorBox.style.marginLeft = '5px';
-    colorBox.style.verticalAlign = 'middle';
-
-    colorContainer.appendChild(colorBox);
-    titleHeader.appendChild(colorContainer);
+    
+    const colorDiv = document.getElementById('todo-color');
+    colorDiv.style.backgroundColor = todo.color;
 
     const dato = document.getElementById('dati-todo');
 

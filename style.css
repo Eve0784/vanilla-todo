@@ -41,6 +41,14 @@ body {
     align-items: center;
     gap: 4px;
     color: black;
+    
+}
+
+span {
+    margin-left: 10px;
+    display: block;
+    text-align: left;
+    width: 100%;
     text-shadow: 1px 1px 2px lightskyblue;
 }
 
@@ -62,13 +70,14 @@ body {
     background-color: white;
     border: 1px solid black;
     border-radius: 50%;
-    font-size: x-large;
-    width: 30px;
+    font-size: large;
+    width: 35px;
     height: 30px;
     text-decoration: none;
     color: black;
     line-height: 30px;
     text-align: center;
+     box-shadow:  1px 1px 2px rgb(29, 32, 34);
 }
 
 .detail-link:hover {
@@ -92,10 +101,18 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 15px;
+    box-shadow:  1px 1px 2px rgb(29, 32, 34);
 }
 
 .btn:hover {
     background: #8dadd5;
     border: #020024 1px solid;
     color: black;
+}
+
+.colored-dot {
+    min-height: 25px;
+    min-width: 25px;
+    border-radius: 50%;
+    box-shadow:  1px 1px 2px rgb(29, 32, 34);
 }

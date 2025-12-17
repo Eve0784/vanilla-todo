@@ -7,6 +7,11 @@ function displayTodos(todos) {
         const card = document.createElement('div');
         card.classList.add('todo-card');
 
+        const colorDiv = document.createElement('div');
+        colorDiv.classList.add('colored-dot');
+        colorDiv.style.backgroundColor = todo.color;
+        card.appendChild(colorDiv);
+
         const titleSpan = document.createElement('span');
         titleSpan.appendChild(document.createTextNode(todo.title));
         if (todo.done === true) {
@@ -23,14 +28,14 @@ function displayTodos(todos) {
         // card.appendChild(detailBtn);
 
         const detailLink = document.createElement('a');
-        detailLink.appendChild(document.createTextNode('🠞'));
+        detailLink.appendChild(document.createTextNode('🡺'));
         detailLink.classList.add('detail-link');
-        detailLink.href = './detail.html?todoId='+todo.id;
+        detailLink.href = './detail.html?todoId=' + todo.id;
         card.appendChild(detailLink)
 
 
         todosContainer.appendChild(card);
-        
+
     }
 }
 // getAllTodos().then(results => displayTodos(results));
@@ -57,7 +62,7 @@ function orderByTitle() {
 }
 
 const orderByTitleBtn = document.getElementById('order-title');
-orderByTitleBtn.addEventListener('click',orderByTitle);
+orderByTitleBtn.addEventListener('click', orderByTitle);
 
 //---------------------------------ORDINA PER DATA -----------------------------//
 function compareDates(t1, t2) {
@@ -70,4 +75,4 @@ function orderByDate() {
 }
 
 const orderByDateBtn = document.getElementById('order-date');
-orderByDateBtn.addEventListener('click',orderByDate);
+orderByDateBtn.addEventListener('click', orderByDate);
