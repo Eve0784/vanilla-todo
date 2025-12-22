@@ -36,3 +36,16 @@ function changeDoneStatus(id, newStatus) {
     .then(result => result)
     .catch(error => console.error('Aiutooooooo!', error))
 }
+
+
+function createTodo(todoData) {
+    const apiUrl = "https://694115c8686bc3ca81658f52.mockapi.io/api/v1/todos";
+    return fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(todoData)
+    })
+    .then((response) => response.json())
+    .then(todo => todo)
+    .catch(error => console.error("Aiutoo", error));
+}
