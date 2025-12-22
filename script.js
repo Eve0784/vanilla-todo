@@ -27,26 +27,26 @@ function displayTodos(todos) {
         const actionsDiv = document.createElement('div');
         actionsDiv.classList.add('actions-div');
         
-        // Botón de delete
-        const deleteBtn = document.createElement('button');
-        deleteBtn.innerHTML = '🗑️';
-        deleteBtn.classList.add('delete-btn');
-        deleteBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (confirm('¿Sei sicuro di cancellare questo resgistro?')) {
-                deleteTodo(todo.id).then(deleted => {
-                    if (deleted) {
-                        // Mostrar mensaje de éxito
-                        showSuccessMessage('registro cancellato con successo!');
-                        // Eliminar del array local
-                        todos = todos.filter(t => t.id !== todo.id);
-                        // Actualizar la vista
-                        displayTodos(todos);
-                    }
-                });
-            }
-        });
-        actionsDiv.appendChild(deleteBtn);
+        // // Botón de delete
+        // const deleteBtn = document.createElement('button');
+        // deleteBtn.innerHTML = '🗑️';
+        // deleteBtn.classList.add('delete-btn');
+        // deleteBtn.addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     if (confirm('¿Sei sicuro di cancellare questo resgistro?')) {
+        //         deleteTodo(todo.id).then(deleted => {
+        //             if (deleted) {
+        //                 // Mostrar mensaje de éxito
+        //                 showSuccessMessage('registro cancellato con successo!');
+        //                 // Eliminar del array local
+        //                 todos = todos.filter(t => t.id !== todo.id);
+        //                 // Actualizar la vista
+        //                 displayTodos(todos);
+        //             }
+        //         });
+        //     }
+        // });
+        // actionsDiv.appendChild(deleteBtn);
         
         const linkDiv = document.createElement('div');
         linkDiv.classList.add('arrow-div')
