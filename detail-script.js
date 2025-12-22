@@ -2,11 +2,12 @@ function displayTodo(todo) {
     const titleHeader = document.getElementById('todo-title');
     titleHeader.innerHTML = todo.title;
 
-    
+
     const colorDiv = document.getElementById('todo-color');
     colorDiv.style.backgroundColor = todo.color;
 
     const dato = document.getElementById('dati-todo');
+    dato.innerHTML = '';
 
     const description = document.createElement('p');
     description.innerHTML = todo.description;
@@ -25,31 +26,31 @@ function displayTodo(todo) {
     dato.appendChild(isDone);
 
     // Contenedor para los botones
-        const actionsDiv = document.createElement('div');
-        actionsDiv.classList.add('actions-div');
-        
-        // Botón de delete
-        const deleteBtn = document.createElement('button');
-        deleteBtn.innerHTML = '🗑️ Elimina';
-        deleteBtn.classList.add('delete-btn');
-        deleteBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (confirm('¿Sei sicuro di cancellare questo resgistro?')) {
-                deleteTodo(todo.id).then(deleted => {
-                    if (deleted) {
-                        // Mostrar mensaje de éxito
-                        showSuccessMessage('registro cancellato con successo!');
-                        // Eliminar del array local
-                        todos = todos.filter(t => t.id !== todo.id);
-                        // Actualizar la vista
-                        displayTodos(todos);
-                    }
-                });
-            }
-        });
-        actionsDiv.appendChild(deleteBtn);
-        dato.appendChild(actionsDiv);
-        
+    const actionsDiv = document.createElement('div');
+    actionsDiv.classList.add('actions-div');
+
+    // Botón de delete
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('status-btn');
+    deleteBtn.innerHTML = '🗑️ Elimina';
+    deleteBtn.addEventListener('click', deleteTodoAndRedirect);
+
+    actionsDiv.appendChild(deleteBtn);
+
+    // Boton de completar
+
+    const statusBtn = document.createElement('button');
+    statusBtn.classList.add('status-btn');
+    statusBtn.addEventListener('click', changeStatus);
+    if (todo.done) {
+        statusBtn.innerHTML = '↺ Riattiva';
+    }else{
+        statusBtn.innerHTML = '✔ Completa'
+    }
+    actionsDiv.appendChild(statusBtn);
+
+    dato.appendChild(actionsDiv);
+
 }
 
 function formaDate(dateIso) {
@@ -68,27 +69,30 @@ function formaDate(dateIso) {
     return date.toLocaleDateString('it-IT', options);
 
 }
+
+
 const searchParams = new URLSearchParams(window.location.search);
-const id = searchParams.get('todoId')
-getTodo(id).then(result => displayTodo(result));
+const id = searchParams.get('todoId');
+let selectedTodo;
+
+getTodo(id).then(result => {
+    selectedTodo = result;
+    displayTodo(result)
+});
 
 
+function deleteTodoAndRedirect() {
+    if (confirm("Vuoi veramente cancellare il todo???")) {
+        deleteTodo(selectedTodo.id).then(_ => {
+            window.location.assign('./')
+        });  
+    }
+}
 
-// Función para mostrar mensaje de éxito
-function showSuccessMessage(message) {
-    // Crear el elemento del mensaje
-    const messageDiv = document.createElement('div');
-    messageDiv.textContent = message;
-    messageDiv.classList.add('success-message');
-    
-    // Agregar al body
-    document.body.appendChild(messageDiv);
-    
-    // Eliminar después de 3 segundos
-    setTimeout(() => {
-        messageDiv.classList.add('slide-out');
-        setTimeout(() => {
-            document.body.removeChild(messageDiv);
-        }, 300);
-    }, 3000);
+function changeStatus() {
+    changeDoneStatus(selectedTodo.id, !selectedTodo.done)
+    .then(_ => {
+        selectedTodo.done = !selectedTodo.done;
+        displayTodo(selectedTodo);
+    })
 }

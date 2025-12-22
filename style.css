@@ -41,7 +41,7 @@ body {
     align-items: center;
     gap: 4px;
     color: black;
-    
+
 }
 
 span {
@@ -66,12 +66,35 @@ span {
     color: white;
 } */
 
-.arrow-div{
+.arrow-div {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 40px;
     height: 30px;
+}
+
+.actions-div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.check-btn {
+    background: rgb(76, 180, 116);
+    border: none;
+    font-size: x-large;
+    color: white;
+    box-shadow: 1px 1px 2px rgb(29, 32, 34);
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.check-btn:hover {
+    transform: scale(1.8);
 }
 
 .detail-link {
@@ -85,7 +108,7 @@ span {
     color: black;
     line-height: 30px;
     text-align: center;
-    box-shadow:  1px 1px 2px rgb(29, 32, 34);
+    box-shadow: 1px 1px 2px rgb(29, 32, 34);
     margin-right: 10px;
 }
 
@@ -110,7 +133,7 @@ span {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 15px;
-    box-shadow:  1px 1px 2px rgb(29, 32, 34);
+    box-shadow: 1px 1px 2px rgb(29, 32, 34);
 }
 
 .btn:hover {
@@ -124,65 +147,5 @@ span {
     min-height: 25px;
     min-width: 25px;
     border-radius: 50%;
-    box-shadow:  1px 1px 2px rgb(29, 32, 34);
-}
-
-.actions-div {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.delete-btn {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 5px;
-    transition: transform 0.2s;
-}
-
-.delete-btn:hover {
-    transform: scale(1.2);
-}
-/* Mensaje de éxito */
-.success-message {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    font-size: 16px;
-    /* font-weight: bold; */
-    z-index: 1000;
-    animation: slideIn 0.3s ease-out;
-}
-
-.success-message.slide-out {
-    animation: slideOut 0.3s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(400px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(400px);
-        opacity: 0;
-    }
+    box-shadow: 1px 1px 2px rgb(29, 32, 34);
 }
