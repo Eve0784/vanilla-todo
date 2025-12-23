@@ -9,7 +9,7 @@
 <body>
    <h1 class="title-new-todo">Compila un nuovo todo</h1>
      <div class="form-container">
-        <form id="my-form" onsubmit="formSubmit(event)">
+        <form id="my-form" onsubmit="saveTodo(event)" method="get">
             <div>
                 <label for="title">Titolo</label>
                 <input type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit" required>

@@ -1,4 +1,4 @@
-function formSubmit(event) {
+function saveTodo(event) {
 
     const myForm = document.getElementById("my-form");
     event.preventDefault();
