@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="./new-style.css">
-</head>
-<body>
-   <h1 class="title-new-todo">Compila un nuovo todo</h1>
-     <div class="form-container">
-        <form id="my-form" onsubmit="saveTodo(event)" method="get">
-            <div>
-                <label for="title">Titolo</label>
-                <input type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit" required>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <link rel="stylesheet" href="./new-style.css">
+    </head>
+
+    <body>
+        <div class="page">
+            <header>
+                <div class="arrow-div"><a class="back-link" href="./">🢀</a></div>
+                <div>
+                    <h1 class="title-new-todo">Compila un nuovo todo</h1>
+                </div>
+            </header>
+            <div class="form-container">
+                <form id="my-form" onsubmit="saveTodo(event)" method="get">
+                    <div>
+                        <label for="title">Titolo</label>
+                        <input type="text" name="title" id="title"
+                            placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit" required>
+                    </div>
+                    <div>
+                        <label for="description">Descrizione</label>
+                        <textarea id="description"
+                            placeholder="Voluptatum quis excepturi, iste nihil aliquam nisi nostrum commodi quia ea"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <label for="end-date">Data di fine</label>
+                        <input type="date" name="enddate" id="end-date" required>
+                    </div>
+                    <div>
+                        <label for="color">Colore</label>
+                        <input type="color" name="color" id="color">
+                    </div>
+                    <button type="submit">Salva</button>
+                </form>
             </div>
-            <div>
-                <label for="description">Descrizione</label>
-                <input type="text" name="description" id="description" placeholder="Voluptatum quis excepturi, iste nihil aliquam nisi nostrum commodi quia ea" required>
-            </div>
-             <div>
-                <label for="end-date">Data di fine</label>
-                <input type="date" name="enddate" id="end-date" required>
-            </div>
-             <div>
-                <label for="color">Colore</label>
-                <input type="color" name="color" id="color">
-            </div>
-            <button type="submit">Invia</button>
-        </form>
-    </div>
-    
-</body>
-<script src="./todo-service.js"></script>
-<script src="./new-script.js"></script>
+        </div>
+
+    </body>
+    <script src="./todo-service.js"></script>
+    <script src="./new-script.js"></script>
+
 </html>

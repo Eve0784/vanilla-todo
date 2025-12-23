@@ -16,10 +16,42 @@ body{
     background: #833AB4;
     background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%)
 }
-
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.page {
+    max-width: 800px;
+    padding: 16px;
+    /* background-color: rgba(245, 245, 220, 0.553); */
+    /* color: white; */
+    margin-top: 50px;
+    border-radius: 25px;
+}
 .title-new-todo {
     color: white;
     text-shadow: 1px 1px 2px black;
+}
+.back-link {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: large;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+    text-align: center;
+    box-shadow:  1px 1px 2px rgb(29, 32, 34);
+}
+
+.back-link:hover {
+    background-color: black;
+    color: white;
 }
 
 .form-container {
@@ -36,6 +68,7 @@ body{
     gap: 10px;
     align-items: center;
     margin-bottom: 15px;
+    max-width: 300px;
 }
 
 label {

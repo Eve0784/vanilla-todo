@@ -1,6 +1,5 @@
 function saveTodo(event) {
-
-    const myForm = document.getElementById("my-form");
+    const myForm = document.getElementById("my-form"); // const myForm = event.target
     event.preventDefault();
 
     const todayDate = new Date().toISOString()
